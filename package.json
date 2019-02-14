@@ -1,0 +1,22 @@
+{
+  "name": "hltv-spider",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "w-zengtao",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run build",
+    "start": "node src/start",
+    "pretty": "prettier --write \"**/*.ts\""
+  },
+  "dependencies": {
+    "hltv": "^2.12.2",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3"
+  }
+}
