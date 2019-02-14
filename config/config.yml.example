@@ -1,0 +1,11 @@
+production:
+  Redis:
+    Host: 127.0.0.1
+    Port: 6379
+    Db: 12
+
+development:
+  Redis:
+    Host: 127.0.0.1
+    Port: 6379
+    Db: 12

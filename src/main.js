@@ -1,25 +1,23 @@
 import { HLTV } from 'hltv'
-// import * as redis from 'redis'
+import { Config } from '../config/config'
+import redis from 'redis'
 
-// const client = redis.createClient()
-//
-// HLTV.getMatches().then(function(res) {
-//   console.log(res)
-// })
-//
-// client.quit()
+const client = redis.createClient({
+  host: Config.Redis['Host'],
+  port: Config.Redis['Port'],
+  db: Config.Redis['Db']
+})
 
 const aysncFetchMatches = async function() {
   await HLTV.getMatches().then(function(res) {
     if (Array.isArray(res)) {
-      var tmp = filterLiveMatches(res)
-      console.log(tmp.length);
+      processLiveMatches(filterLiveMatches(res))
+      processMatches(res)
     }
   })
 
-  console.log("------------------");
+  console.log("------------------")
 }
-
 
 // ------------------------------------ 这里需要拿出 Live 的比赛 ------------------------------------
 
@@ -41,13 +39,15 @@ function isLive(match) {
 }
 
 // ------------------------------------ 这里处理 Live 的比赛 ------------------------------------
-function processLiveMatches(liveMatches) {
-
+const processLiveMatches = (liveMatches) => {
+  console.log(liveMatches)
 }
 
 // ------------------------------------ 这里处理所有的比赛 ------------------------------------
-function processMatches(matches) {
-
+const processMatches = (matches) => {
+  console.log(matches.length)
 }
 
-setInterval(aysncFetchMatches, 2000)
+// setInterval(aysncFetchMatches, 5000)
+console.log(Config.Redis)
+client.quit()

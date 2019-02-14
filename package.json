@@ -7,15 +7,19 @@
   "scripts": {
     "build": "npm run build",
     "start": "node src/start",
+    "dev": "NODE_ENV=development ts-node src/start",
+    "pro": "NODE_ENV=production  ts-node src/start",
     "pretty": "prettier --write \"**/*.ts\""
   },
   "dependencies": {
     "hltv": "^2.12.2",
-    "redis": "^2.8.0"
+    "redis": "^2.8.0",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
+    "prettier": "^1.16.4",
     "ts-node": "^8.0.2",
     "typescript": "^3.3.3"
   }
