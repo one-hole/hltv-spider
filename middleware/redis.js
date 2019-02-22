@@ -13,3 +13,7 @@ export const RedisClient = redis.createClient({
 RedisClient.h_set = function(match) {
   RedisClient.hset('hltv-matches', match['id'], JSON.stringify(match))
 }
+
+RedisClient.pub = match => {
+  RedisClient.publish('hltv-matches-channel', JSON.stringify(match))
+}

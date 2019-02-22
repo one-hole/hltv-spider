@@ -39,9 +39,10 @@ const processLiveMatches = (liveMatches) => {
 
 // ------------------------------------ 这里处理所有的比赛 ------------------------------------
 const processMatch = (match) => {
-  RedisClient.h_set(match)
+  RedisClient.pub(match)
 }
 
-// setInterval(aysncFetchMatches, 5000)
-aysncFetchMatches()
-// RedisClient.quit()
+/*
+  每间隔 15 秒请求一次 HLTV 的赛程
+*/
+setInterval(aysncFetchMatches, 15000)
