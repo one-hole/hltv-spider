@@ -17,7 +17,6 @@ const aysncFetchMatches = async function() {
 }
 
 // ------------------------------------ 这里需要拿出 Live 的比赛 ------------------------------------
-
 function filterLiveMatches(matches) {
   var liveMatches = new Array()
   for(var index in matches) {
@@ -40,25 +39,23 @@ function isLive(match) {
 const processLiveMatches = (liveMatches) => {
   if (Array.isArray(liveMatches)) {
     for(var index in liveMatches) {
-
+      LiveMatchService.run(liveMatches[index]);
     }
   }
 }
 
 // ------------------------------------ 这里处理所有的比赛 ------------------------------------
 const processMatch = (match) => {
-  RedisClient.pub(match)
+  RedisClient.pub(match);
 }
 
 /*
   每间隔 15 秒请求一次 HLTV 的赛程
 */
+
 // setInterval(aysncFetchMatches, 15000)
 
 
-// LiveMatchService.run({id: 2331078})
-LiveMatchService.run({id: 2331532})
-
-
-// Release redis connection
-RedisClient.end(true)
+LiveMatchService.run({
+  id: 2333573
+})

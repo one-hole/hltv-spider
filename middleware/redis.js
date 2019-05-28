@@ -1,5 +1,5 @@
-import redis from 'redis'
-import { Config } from '../config/config'
+import redis from 'redis';
+import { Config } from '../config/config';
 
 export const RedisClient = redis.createClient({
   host: Config.Redis['Host'],
