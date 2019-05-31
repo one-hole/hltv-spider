@@ -5,6 +5,8 @@ export default class LiveMatchService extends MatchService {
 
   fetchScoreBoard() {
     HLTV.connectToScorebot({id: this.steam_id, onScoreboardUpdate: (data) => {
+      // console.dir(data, { depth: null });
+    }, onLogUpdate: (data) => {
       console.log("-----------------------------------------");
       console.log("-----------------------------------------");
       console.log("-----------------------------------------");
@@ -13,8 +15,6 @@ export default class LiveMatchService extends MatchService {
       console.log("-----------------------------------------");
       console.log("");
       console.dir(data, { depth: null });
-    }, onLogUpdate: (data) => {
-      // console.log(data);
     }, onFullLogUpdate: (data) => {
 
     }})
@@ -23,7 +23,6 @@ export default class LiveMatchService extends MatchService {
 
 LiveMatchService.run = (match) => {
   var service = new LiveMatchService(match.id)
-  // service.fetchMatchDetail();
   service.fetchScoreBoard();
 }
 

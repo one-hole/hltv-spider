@@ -17,3 +17,7 @@ RedisClient.h_set = function(match) {
 RedisClient.pub = match => {
   RedisClient.publish('hltv-matches-channel', JSON.stringify(match))
 }
+
+RedisClient.live_pub = match => {
+  RedisClient.publish('hltv-live-matches-channel', JSON.stringify(match))
+}
