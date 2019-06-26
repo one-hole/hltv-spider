@@ -31,6 +31,7 @@ export default class LiveMatchService extends MatchService {
 
 // 已经存在的连接我们不需要二次重新连接
 LiveMatchService.run = (match) => {
+  // console.log("Live");
   var service = new LiveMatchService(match.id)
   service.fetchScoreBoard();
 }
