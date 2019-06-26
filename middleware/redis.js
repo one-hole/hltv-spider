@@ -21,3 +21,7 @@ RedisClient.pub = match => {
 RedisClient.live_pub = match => {
   RedisClient.publish('hltv-live-matches-channel', JSON.stringify(match))
 }
+
+RedisClient.socket_pub = data => {
+  RedisClient.publish('aiesports-csgo-websocket', JSON.stringify(data))
+}

@@ -1,6 +1,7 @@
 import { HLTV } from 'hltv'
 import { RedisClient } from '../middleware/redis'
 import LiveMatchService from '../services/live_match_service'
+import Logger from '../log/logger'
 
 global.lives = {
 
@@ -52,10 +53,4 @@ const processMatch = (match) => {
 /*
   每间隔 15 秒请求一次 HLTV 的赛程
 */
-
-// setInterval(aysncFetchMatches, 15000)
-
-
-LiveMatchService.run({
-  id: 2333783
-})
+setInterval(aysncFetchMatches, 15000)
