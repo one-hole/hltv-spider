@@ -23,8 +23,6 @@ const aysncFetchMatches = async function() {
       processLiveMatches(filterLiveMatches(res));
     }
   })
-
-  // console.log("------------------")
 }
 
 // ------------------------------------ 这里需要拿出 Live 的比赛 ------------------------------------
@@ -35,7 +33,7 @@ function filterLiveMatches(matches) {
   previous_lives = current_lives;
   current_lives = [];
 
-  // console.log(previous_lives);  
+  console.log(previous_lives);  
 
   for(var index in matches) {
     if (isLive(matches[index])) {
@@ -45,7 +43,7 @@ function filterLiveMatches(matches) {
     processMatch(matches[index])
   }
 
-  // console.log(current_lives);
+  console.log(current_lives);
   return liveMatches
 }
 
