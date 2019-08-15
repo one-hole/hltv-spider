@@ -12,7 +12,7 @@
     "pretty": "prettier --write \"**/*.ts\""
   },
   "dependencies": {
-    "hltv": "^2.12.2",
+    "hltv": "^2.16.0",
     "redis": "^2.8.0",
     "yamljs": "^0.3.0"
   },
