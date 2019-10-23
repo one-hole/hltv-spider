@@ -12,6 +12,7 @@ export default class LiveMatchService extends MatchService {
 
       var output = {
         id: this.steam_id,
+        timestamp: (Date.parse(new Date()) / 1000),
         data: data
       }
       RedisClient.socket_pub(output);
@@ -19,6 +20,7 @@ export default class LiveMatchService extends MatchService {
     }, onLogUpdate: (data) => {
       var output = {
         id: this.steam_id,
+        timestamp: (Date.parse(new Date()) / 1000),
         logs: data
       }
 
@@ -34,5 +36,9 @@ LiveMatchService.run = (match) => {
   var service = new LiveMatchService(match.id)
   service.fetchScoreBoard();
 }
+
+
+LiveMatchService.lives = [1]
+
 
 // 这里用来处理所有 进行中 Match
