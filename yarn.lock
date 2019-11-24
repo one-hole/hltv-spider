@@ -1424,10 +1424,10 @@ has@^1.0.1, has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-hltv@^2.16.0:
-  version "2.16.3"
-  resolved "https://registry.yarnpkg.com/hltv/-/hltv-2.16.3.tgz#da2ff0af56a987e3bef5e443f9a53b538c9b7939"
-  integrity sha512-G+k74V2UmccADSnqhknipZ+IeaEqbjxqxPREAQHG/WlOaIsd0mptxXBF1QKOkvuzL112EnZNhczrYCarIs293g==
+hltv@^2.17.0:
+  version "2.17.1"
+  resolved "https://registry.yarnpkg.com/hltv/-/hltv-2.17.1.tgz#38aa61c1ab6e0716c9a240dd9f5b89265488d437"
+  integrity sha512-1RGqZejR9F1ycKYaZOuyKfq4Q++QuFEj0RkcDinmfUnHICvu44AtxlxKrULlFG2+gUnVll2yCxiSZOO5JycE+Q==
   dependencies:
     cheerio "^1.0.0-rc.2"
     request "^2.88.0"
