@@ -23,5 +23,5 @@ RedisClient.live_pub = match => {
 }
 
 RedisClient.socket_pub = data => {
-  RedisClient.publish('aiesports-csgo-websocket', JSON.stringify(data))
+  RedisClient.publish('aiesports-csgo-websocket-to-back', JSON.stringify(data))
 }
